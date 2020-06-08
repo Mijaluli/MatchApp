@@ -1,0 +1,90 @@
+<div class="header">
+  <a routerLink="/"><img src="../assets/img/logo.jpg" width="200px" height="100px"> </a>
+  <!--<div class="header-right">-->
+    
+<nav>
+  <a routerLink="/create"><button  mat-raised-button  color="gold"  > Add Candidate</button></a>
+  <a routerLink="/"><button mat-raised-button  color="gold"   > Home</button></a>
+  <a routerLink="/createMatch"><button  mat-raised-button  color="gold"  > Add match Maker</button></a>
+  <a routerLink="/listMatch"><button  mat-raised-button  color="gold"  > list matchMakers</button></a>
+  <a routerLink="/candidate"><button  mat-raised-button  color="gold"  > list candidate</button></a>
+  <a routerLink="/statistic"><button  mat-raised-button  color="gold"  > View Statistic</button></a>
+  <a routerLink="/login"><button  mat-raised-button  color="gold"  >Login</button></a>
+  <a routerLink="/register"><button  mat-raised-button  color="gold"  >Register</button></a>
+
+</nav>
+
+   <!--  <a href="/login">Login</a>
+    <a href="/register">Register</a>
+   <li class="nav-item ml-0 ml-md-auto" ngbDropdown #dropdown="ngbDropdown">
+      <a class="nav-link dropdown-toggle" ngbDropdownToggle>
+        <i class="fa fa-user mr-1"></i>
+        <span *ngIf="!token">Accounts</span>
+        <span *ngIf="data.user">{{ data.user.name }}</span>
+      </a>
+      <div ngbDropdownMenu class="dropdown-menu">
+        <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile" class="dropdown-item">
+          <i class="fa fa-user-circle" aria-hidden="true"></i> Profile
+        </a>
+        <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/login" class="dropdown-item">
+          <i class="fa fa-key" aria-hidden="true"></i> Login
+        </a>
+        <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();logout();" class="dropdown-item">
+          <i class="fa fa-key" aria-hidden="true"></i> Logout
+        </a>
+        <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/register" class="dropdown-item">
+          <i class="fa fa-group" aria-hidden="true"></i> Register
+        </a>
+      </div>
+    </li>-->
+   
+  
+</div>
+
+<!--<app-candidate-list ></app-candidate-list>
+<app-candidate-create ></app-candidate-create>-->
+
+
+
+
+  
+    <router-outlet></router-outlet>
+    <!--<app-city [filterValue]=storedFilter ></app-city>
+  --onchangeded($event)-->
+  <app-socket></app-socket>
+<app-map></app-map>
+
+<!-- Site footer -->
+<footer class="site-footer">
+  <div> <app-map></app-map></div>
+ 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Our idea is to combine the advantages of the Internet with the world of matches. Here you will get all the convenience of the internet,
+          The New Seven Greetings is the most advanced and smart matchmaking site among Israel's dating sites (check us out :)
+          Yes, totally free. No lowercase letters and no late payment requirements. We want the site to be free and open to all. We really want to help build loyal homes in Israel, without any barriers.</p>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2020 MatchApp.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <!--<ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+        </ul>-->
+      </div>
+    </div>
+  </div>
+</footer>
+

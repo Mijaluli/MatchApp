@@ -1,0 +1,28 @@
+<mat-card>
+    <!--<form (submit)="onAddCandidate(candidateForm) #candidateForm="ngForm"> #candidateForm="ngForm">--> 
+        <form [formGroup]="form"  (submit)="onSaveCity()" *ngIf="!isLoading">
+            <mat-form-field>   
+                <input
+                matInput type="text"
+                formControlName="cityName"
+                placeholder="cityName"
+                
+                minlength="3"
+                >
+                
+                <mat-error *ngIf="form.get('cityName').invalid">Please enter a city Name.</mat-error>
+        
+            </mat-form-field>
+        <mat-form-field>
+            <app-city></app-city>
+        </mat-form-field>
+        <button
+        mat-raised-button
+        color="accent"
+        type="submit">Save City
+        </button>
+        </form>
+        </mat-card>
+
+
+        

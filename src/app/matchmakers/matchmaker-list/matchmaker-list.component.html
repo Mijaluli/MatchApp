@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="matchmakers.length > 0 && !isLoading">
+    <mat-expansion-panel *ngFor="let matchmaker of matchmakers">
+    <mat-expansion-panel-header>
+    {{ matchmaker.title}}
+    </mat-expansion-panel-header>
+    <p>{{ matchmaker.content}}</p>
+    <div class="matchmaker-image">
+      <img [src]="matchmaker.imagePath" [alt]="matchmaker.title">
+    </div>
+    <mat-action-row>
+        <a mat-button color="primary" [routerLink]=  "['/edit', matchmaker.id]" >EDIT</a>
+        <button mat-button color="warn" (click)="onDelete(matchmaker.id)">DELETE</button>
+      </mat-action-row>
+
+    </mat-expansion-panel>
+    </mat-accordion>
+    <mat-paginator [length]="totalMatchmakers" [pageSize]="matchmakersPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+  *ngIf="matchmakers.length > 0"></mat-paginator>
+    <p class="info-text mat-body-1" *ngIf="matchmakers.length <=0 && !isLoading">No matchmakers added yet !</p>

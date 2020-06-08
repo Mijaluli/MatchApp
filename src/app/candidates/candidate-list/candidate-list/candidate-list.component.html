@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="candidates.length > 0 && !isLoading">
+    <mat-expansion-panel *ngFor="let candidate of candidates">
+    <mat-expansion-panel-header>
+    {{ candidate.title}}
+    </mat-expansion-panel-header>
+    <p>{{ candidate.firstName}}</p>
+    <div class="candidate-image">
+      <img [src]="candidate.imagePath" [alt]="candidate.title">
+    </div>
+    <mat-action-row>
+        <a mat-button color="primary" [routerLink]=  "['/edit', candidate.id]" >EDIT</a>
+        <button mat-button color="warn" (click)="onDelete(candidate.id)">DELETE</button>
+      </mat-action-row>
+
+    </mat-expansion-panel>
+    </mat-accordion>
+    <mat-paginator [length]="totalCandidates" [pageSize]="candidatesPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+  *ngIf="candidates.length > 0"></mat-paginator>
+    <p class="info-text mat-body-1" *ngIf="candidates.length <=0 && !isLoading">No candidates added yet !</p>
